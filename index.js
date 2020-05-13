@@ -1,8 +1,5 @@
-import React from 'react';
-
-export default function easyAlert(message, height, width, background, fontColor, borderWidth, borderRadius){
+module.exports = function easyAlert(message, height, width, background, fontColor, borderWidth, borderRadius){
     const customAlert = document.createElement('section');
-    const componentNode = React.findDOMNode(this);
 
     customAlert.innerText = message;
     customAlert.style = `
@@ -11,12 +8,7 @@ export default function easyAlert(message, height, width, background, fontColor,
         background: ${background};
         color: ${fontColor};
         border: ${borderWidth}px;
-        border-radius: ${borderRadius} 
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        margin-top: calc(${height}px / -2);
-        margin-left: calc(${width}px / -2);`
+        border-radius: ${borderRadius}`
 
-    componentNode.append(customAlert);
+    document.body.appendChild(customAlert);
 }
