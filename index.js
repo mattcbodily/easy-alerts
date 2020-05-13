@@ -1,3 +1,5 @@
+import React from 'react';
+
 module.exports = function easyAlert(message, height, width, background, fontColor, borderWidth, borderRadius){
     const customAlert = document.createElement('section');
     const componentNode = React.findDOMNode(this);
