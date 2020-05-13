@@ -6,7 +6,7 @@ module.exports = function easyAlert(message, height, width, background, fontColo
         width: ${width}px;
         background: ${background};
         color: ${fontColor};
-        border: ${borderWidth};
+        border: ${borderWidth}px;
         border-radius: ${borderRadius} 
         position: fixed;
         top: 50%;
