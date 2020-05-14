@@ -43,8 +43,10 @@ module.exports = {
             position: absolute;
             top: 0px;
             right: 5px;
+            z-index: 2;
             line-height: 20px;
-            cursor: pointer;`
+            cursor: pointer;
+            color: white;`
 
         document.body.appendChild(text);
     },
