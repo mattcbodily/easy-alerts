@@ -2,6 +2,8 @@ module.exports = function easyAlert(message, height, width, background, fontColo
     const customAlert = document.createElement('section');
     const root = document.getElementById('root');
 
+    console.log(document.body)
+
     customAlert.innerText = message;
     customAlert.style = `
         height: ${height}px; 
