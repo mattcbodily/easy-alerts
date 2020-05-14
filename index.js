@@ -36,7 +36,7 @@ module.exports = {
         
         const close = document.createElement('span');
 
-        close.innerText('x');
+        close.innerText = 'x';
         close.style = `
             position: absolute;
             top: 0px;
