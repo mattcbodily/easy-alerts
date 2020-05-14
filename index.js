@@ -11,7 +11,10 @@ module.exports = function easyAlert(message, height, width, background, fontColo
         background: ${background};
         color: ${fontColor};
         border: ${borderWidth}px;
-        border-radius: ${borderRadius}`
+        border-radius: ${borderRadius};
+        position: fixed;
+        top: 0;
+        right: 0;`
 
     node.append(customAlert);
 }
