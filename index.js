@@ -1,8 +1,8 @@
-const React = require('react');
+const ReactDOM = require('react-dom');
 
 module.exports = function easyAlert(message, height, width, background, fontColor, borderWidth, borderRadius){
     const customAlert = document.createElement('section');
-    const node = React.findDOMNode(this);
+    const node = ReactDOM.findDOMNode(this);
 
     customAlert.innerText = message;
     customAlert.style = `
