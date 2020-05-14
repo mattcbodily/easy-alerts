@@ -1,5 +1,6 @@
 module.exports = function easyAlert(message, height, width, background, fontColor, borderWidth, borderRadius){
     const customAlert = document.createElement('section');
+    const root = document.getElementById('root');
 
     customAlert.innerText = message;
     customAlert.style = `
@@ -10,5 +11,5 @@ module.exports = function easyAlert(message, height, width, background, fontColo
         border: ${borderWidth}px;
         border-radius: ${borderRadius}`
 
-    document.body.appendChild(customAlert);
+    root.appendChild(customAlert);
 }
