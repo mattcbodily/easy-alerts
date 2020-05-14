@@ -1,9 +1,9 @@
 module.exports = {
     customAlert: function(message, height, width, background, fontColor, borderWidth, borderRadius, top, left){
-        const customAlert = document.createElement('section');
+        const custom = document.createElement('section');
     
-        customAlert.innerText = message;
-        customAlert.style = `
+        custom.innerText = message;
+        custom.style = `
             height: ${height}px; 
             width: ${width}px;
             background: ${background};
@@ -14,13 +14,13 @@ module.exports = {
             top: ${top};
             left: ${left};`
     
-        document.body.appendChild(customAlert);
+        document.body.appendChild(custom);
     },
     textAlert: function(alertObj){
-        const textAlert = document.createElement('section');
+        const text = document.createElement('section');
 
-        textAlert.innerText = alertObj.message;
-        textAlert.style = `
+        text.innerText = alertObj.message;
+        text.style = `
             height: 50px;
             width: 250px;
             box-sizing: border-box;
@@ -32,7 +32,9 @@ module.exports = {
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
             line-height: 50px;
-            position: relative;`
+            position: fixed;
+            top: 5px;
+            right: 5px;`
         
         const close = document.createElement('span');
 
@@ -43,6 +45,8 @@ module.exports = {
             right: 5px;
             line-height: 20px;
             cursor: pointer;`
+
+        document.body.appendChild(text);
     },
     imageAlert: function(){
 
