@@ -1,5 +1,8 @@
+const React = require('react');
+
 module.exports = function easyAlert(message, height, width, background, fontColor, borderWidth, borderRadius){
     const customAlert = document.createElement('section');
+    const node = React.findDOMNode(this);
 
     customAlert.innerText = message;
     customAlert.style = `
@@ -10,5 +13,5 @@ module.exports = function easyAlert(message, height, width, background, fontColo
         border: ${borderWidth}px;
         border-radius: ${borderRadius}`
 
-    document.body.appendChild(customAlert);
+    node.append(customAlert);
 }
