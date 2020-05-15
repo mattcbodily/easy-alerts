@@ -82,10 +82,8 @@ module.exports = {
             justify-content: ${alertObj.justifyContent};
             align-items: ${alertObj.alignItems}
             position: fixed;
-            top: 50%;
-            left: 50%;
-            margin-top: -125px;
-            margin-left: -75px;`
+            top: 5px;
+            left: 5px;`
 
         image.style = `height: 150px;`
 
