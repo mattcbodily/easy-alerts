@@ -1,3 +1,17 @@
+const close = document.createElement('span');
+
+close.innerText = 'x';
+close.style = `
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    line-height: 20px;
+    cursor: pointer;`
+
+close.addEventListener('click', function(){
+    close.parentNode.remove()
+});
+
 module.exports = {
     customAlert: function(message, height, width, background, fontColor, borderWidth, borderRadius, top, left){
         const custom = document.createElement('section');
@@ -35,28 +49,41 @@ module.exports = {
             position: fixed;
             top: 5px;
             right: 5px;`
-        
-        const close = document.createElement('span');
-
-        close.innerText = 'x';
-        close.style = `
-            position: absolute;
-            top: 0px;
-            right: 5px;
-            line-height: 20px;
-            cursor: pointer;`
-
-        close.addEventListener('click', function(){
-            close.parentNode.remove()
-        });
 
         text.appendChild(close);
         document.body.appendChild(text);
     },
-    imageAlert: function(){
-
+    imageAlert: function(alertObj){
+        const iAlert = document.createElement('section'),
+              image = document.createElement('img');
     },
-    imageTextAlert: function(){
+    comboAlert: function(alertObj){
+        const combo = document.createElement('section'),
+              image = document.createElement('img'),
+              message = document.createElement('p');
 
+        image.src = alertObj.imageURL;
+        message.innerText = alertObj.message;
+        combo.appendChild(image);
+        combo.appendChild(message);
+        combo.appendChild(close);
+
+        combo.style = `
+            height: 250px;
+            width: 150px;
+            box-sizing: border-box;
+            padding: 0px 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: ${alertObj.backgroundColor};
+            color: ${alertObj.textColor};
+            display: flex;
+            flex-direction: column;
+            justify-content: ${alertObj.justifyContent};
+            align-items: ${alertObj.alignItems};`
+
+        image.style = `height: 150px;`
+
+        document.body.appendChild(combo);
     }
 }
