@@ -80,7 +80,12 @@ module.exports = {
             display: flex;
             flex-direction: column;
             justify-content: ${alertObj.justifyContent};
-            align-items: ${alertObj.alignItems};`
+            align-items: ${alertObj.alignItems}
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -125px;
+            margin-left: -75px;`
 
         image.style = `height: 150px;`
 
