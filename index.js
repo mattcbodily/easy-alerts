@@ -38,7 +38,7 @@ module.exports = {
             height: 50px;
             width: 250px;
             box-sizing: border-box;
-            padding: 0px 10px;
+            padding: 0px 1px;
             border: 1px solid black;
             border-radius: 5px;
             background-color: ${alertObj.backgroundColor};
@@ -49,6 +49,35 @@ module.exports = {
             position: fixed;
             top: 5px;
             right: 5px;`
+
+        if(alertObj.timeout){
+            let count = alertObj.timeout / 1000;
+            const timeoutBar = document.createElement('div');
+            timeoutBar.style = `
+                height: 5px;
+                background-color: white;
+                position: absolute;
+                bottom: 0;
+                border-radius: 0px 0px 10px 10px;`
+            
+            timeoutBar.animate([
+                {width: '100%'},
+                {width: '0%'}
+            ], {
+                duration: alertObj.timeout,
+                easing: 'linear'
+            })
+
+            text.appendChild(timeoutBar);
+
+            let interval = setInterval(() => {
+                count -= 1;
+                if(count === 0){
+                    text.remove();
+                    clearInterval(interval);
+                }
+            }, 1000)
+        }
 
         text.appendChild(close);
         document.body.appendChild(text);
