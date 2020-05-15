@@ -59,10 +59,9 @@ module.exports = {
     },
     comboAlert: function(alertObj){
         const combo = document.createElement('section'),
-              image = document.createElement('img'),
+              image = document.createElement('div'),
               message = document.createElement('p');
 
-        image.src = alertObj.imageURL;
         message.innerText = alertObj.message;
         combo.appendChild(image);
         combo.appendChild(message);
@@ -70,22 +69,32 @@ module.exports = {
 
         combo.style = `
             height: 250px;
-            width: 150px;
+            width: 200px;
             box-sizing: border-box;
             padding: 0px 10px;
             border: 1px solid black;
             border-radius: 5px;
             background-color: ${alertObj.backgroundColor};
             color: ${alertObj.textColor};
+            font-size: 18px;
             display: flex;
             flex-direction: column;
             justify-content: ${alertObj.justifyContent};
             align-items: ${alertObj.alignItems};
             position: fixed;
             top: 50%;
-            left: 50%;`
+            left: 50%;
+            margin-top: -125px;
+            margin-left: -100px;`
 
-        image.style = `height: 150px;`
+        image.style = `
+            height: 125px;
+            width: 125px;
+            box-sizing: border-box;
+            background-image: url(${alertObj.imageURL});
+            background-size: cover;
+            border: 1px solid black;
+            border-radius: 50%;`
 
         document.body.appendChild(combo);
     }
