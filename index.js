@@ -28,7 +28,7 @@ module.exports = {
             border: 1px solid black;
             border-radius: 5px;
             background-color: ${alertObj.backgroundColor};
-            color: white;
+            color: ${alertObj.textColor};
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
             line-height: 50px;
@@ -45,6 +45,10 @@ module.exports = {
             right: 5px;
             line-height: 20px;
             cursor: pointer;`
+
+        close.addEventListener('click', function(){
+            close.parentNode.remove()
+        });
 
         text.appendChild(close);
         document.body.appendChild(text);
