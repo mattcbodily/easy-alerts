@@ -58,7 +58,7 @@ module.exports = {
                 background-color: white;
                 position: absolute;
                 bottom: 0;
-                border-radius: 0px 0px 10px 10px;`
+                border-radius: 0px 0px 2px 2px;`
             
             timeoutBar.animate([
                 {width: '100%'},
@@ -97,8 +97,8 @@ module.exports = {
         combo.appendChild(close);
 
         combo.style = `
-            height: 250px;
-            width: 200px;
+            height: 350px;
+            width: 280px;
             box-sizing: border-box;
             padding: 0px 10px;
             border: 1px solid black;
@@ -113,12 +113,12 @@ module.exports = {
             position: fixed;
             top: 50%;
             left: 50%;
-            margin-top: -125px;
-            margin-left: -100px;`
+            margin-top: -175px;
+            margin-left: -140px;`
 
         image.style = `
-            height: 125px;
-            width: 125px;
+            height: 150px;
+            width: 150px;
             box-sizing: border-box;
             background-image: url(${alertObj.imageURL});
             background-size: cover;
