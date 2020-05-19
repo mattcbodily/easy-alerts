@@ -1,6 +1,6 @@
 # easy-alerts
 
-Easy alerts is a package that provides easy-to-use alerts for your project. Easy alerts pre-built alerts allow you to change images on your alert, as well as adjust the them to match a light or dark setting.
+Easy alerts is a package that provides easy-to-use alerts for your project. Easy alerts allow you to change images on your alert, as well as adjust the theme to match a light or dark setting.
 
 ## Getting Started
 
