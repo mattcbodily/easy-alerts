@@ -1,3 +1,38 @@
+const lightTheme = `
+    background-color: snow;
+`
+
+const darkTheme = `
+    background-color: #2C2C2C;
+    color: white;
+    border: 2px solid #2C2C2C;
+`
+
+const baseAlertStyles = `
+    height: 80px;
+    width: 300px;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 0px 15px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px 3px gray;
+`
+
+const baseImageStyles = `
+    height: 45px;
+    width: 45px;
+`
+
+const baseMessageStyles = `
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+`
+
 const close = document.createElement('span');
 
 close.innerText = 'x';
@@ -126,5 +161,28 @@ module.exports = {
             border-radius: 50%;`
 
         document.body.appendChild(combo);
+    },
+    successAlert: function(alertObj){
+        const sAlert = document.createElement('section'),
+              image = document.createElement('img'),
+              message = document.createElement('p');
+
+        image.src = alertObj.imageURL ? alertObj.imageURL : 'assets/success-icon.svg';
+        image.style = baseImageStyles;
+
+        message.innerText = alertObj.message;
+        message.style = baseMessageStyles;
+        
+        sAlert.appendChild(image);
+        sAlert.appendChild(message);
+        sAlert.appendChild(close);
+        sAlert.style = baseAlertStyles + (alertObj.theme === 'light' ? lightTheme : darkTheme);
+
+        document.body.appendChild(sAlert);
+    },
+    failureAlert: function(alertObj){
+        const fAlert = document.createElement('section'),
+              image = document.createElement('img'),
+              message = document.createElement('p');
     }
 }
