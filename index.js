@@ -1,6 +1,8 @@
+//These icons are the default images that display for the successAlert and failureAlert
 const successIcon = require('./assets/success-icon.svg'),
       failureIcon = require('./assets/failure-icon.svg');
 
+//lightTheme and darkTheme will adjust the appearance of the alert
 const lightTheme = `
     background-color: snow;
 `
@@ -11,6 +13,7 @@ const darkTheme = `
     border: 2px solid #2C2C2C;
 `
 
+//Both successAlert and failureAlert use the baseAlertStyles, baseImageStyles, and baseMessageStyles to keep code dry.
 const baseAlertStyles = `
     height: 80px;
     width: 300px;
@@ -38,6 +41,7 @@ const baseMessageStyles = `
     font-family: Arial, Helvetica, sans-serif;
 `
 
+//close is an svg that has an event attached to it that allows a user to close the alert manually
 const close = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 close.setAttribute('width', '16');
 close.setAttribute('height', '16');
